@@ -138,25 +138,17 @@ function next() {
                 getNewQuestion();
             } else if (questionCounter > 14 && questionCounter < 29) {
                 getNewQuestion();
-                document.getElementById("phase1").classList.remove("is-active");
-                document.getElementById("phase1").classList.add("is-complete");
-                document.getElementById("phase2").classList.add("is-active");
             } else if (questionCounter > 28 && questionCounter < (AllStimuli.length + 1)) {
                 getNewQuestion();
-                document.getElementById("phase2").classList.remove("is-active");
-                document.getElementById("phase2").classList.add("is-complete");
-                document.getElementById("phase3").classList.add("is-active");
             } else if (questionCounter == (AllStimuli.length + 1) && availableQuestions.length == 0) {
-                //console.log("quiz over");
-                window.location.href = "/quest"
+                console.log("quiz over");
+                localStorage.vis = JSON.stringify(VISParameters);
+                //window.location.href = "/quest"
             } else if (availableQuestions.length == 0) {
-                //console.log("quiz over");
-                window.location.href = "/quest"
+                console.log("quiz over");
+                //window.location.href = "/quest"
             } else {
                 getNewQuestion();
-                document.getElementById("phase2").classList.remove("is-active");
-                document.getElementById("phase2").classList.add("is-complete");
-                document.getElementById("phase3").classList.add("is-active");
             }
 
 
@@ -177,8 +169,10 @@ function next() {
         VisParameters.StartTime.push(StartTime);
         VisParameters.EndTime.push(EndTime);
         VisParameters.QNum.push(currentQuestion.qnum);
+        console.log(VisParameters);
 
         //update database
+        /*
         $.ajax({
             type: 'POST',
             contentType: 'application/json',
@@ -192,6 +186,7 @@ function next() {
                 console.log(result);
             }
         });
+        */
 
     } else {
         //Validate Form
