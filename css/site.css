@@ -1,0 +1,188 @@
+.selection {
+    fill: #151313;
+    fill-opacity: 1;
+}
+
+/*body {
+   background-image: url(/static/img/Banner.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: 100% auto;
+    background-color: #FAF5F0; 
+}
+*/
+
+body {    
+    background-color: #FAF5F0;
+  }
+
+.center {
+    margin: auto;
+    width: 80%;
+    /*border: 3px solid #73AD21;*/
+    padding: 10px;
+}
+
+.box {
+    width: 500px;
+    height: 100px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.row {
+    content: " ";
+    clear: both;
+    display: table;
+}
+
+.column {
+    float: left;
+    width: 20%;
+    padding: 5px;
+}
+
+label {
+    cursor: pointer;
+}
+
+label[type="radio"]:hover {
+    border: 2px solid red;
+}
+input[type="radio"]:checked + label {
+    border: 2px solid red;
+}
+
+/*bootstrap css for the form*/
+.bootstrap-iso /*.form-group button*/, .bootstrap-iso form input.form-control, .bootstrap-iso form textarea.form-control, .bootstrap-iso form select.form-control,
+        .bootstrap-iso form .form-group-lg input.form-control, .bootstrap-iso form .form-group-lg textarea.form-control, .bootstrap-iso form .form-group-lg select.form-control,
+        .bootstrap-iso form .form-group-sm input.form-control, .bootstrap-iso form .form-group-sm textarea.form-control, 
+        .bootstrap-iso form .form-group-sm select.form-control{-webkit-border-radius: 20px;-moz-border-radius: 20px; border-radius: 20px;}.bootstrap-iso .formden_header h2, 
+        .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: "Roboto","Roboto", sans-serif; color: black;} /*.bootstrap-iso form button, 
+        .bootstrap-iso form button:hover{color: #ffffff !important;} */
+       .asteriskField{color: red;}.bootstrap-iso form .input-group-addon {color:#555555; background-color: aliceblue; border-radius: 20px; padding-left:15px}
+
+
+/*css for progress bar*/
+.custom-progress-bar {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1rem 0;
+        
+    }
+.custom-progress-bar li {
+        flex: 2;
+        position: relative;
+        padding: 0 0 14px 0;
+        font-size: .875rem;
+        line-height: 0.5;
+        color: #53a318;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: visible;
+        min-width: 0;
+        text-align: center;
+        border-bottom: 2px solid #adadad;
+        background-color: #fff;
+    }
+    .custom-progress-bar li:first-child,
+    .custom-progress-bar li:last-child {
+        flex: 1;
+    }
+    .custom-progress-bar li:last-child {
+        text-align: right;
+    }
+    .custom-progress-bar li:before {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        background-color: #adadad;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        position: absolute;
+        left: calc(50% - 6px);
+        bottom: -5px;
+        z-index: 3;
+        transition: all .2s ease-in-out;
+    }
+    .custom-progress-bar li:first-child:before {
+        left: 0;
+    }
+    .custom-progress-bar li:last-child:before {
+        right: 0;
+        left: auto;
+    }
+    .custom-progress-bar span {
+        transition: opacity .3s ease-in-out;
+    }
+    .custom-progress-bar li:not(.is-active) span {
+        opacity: 0;
+    }
+    .custom-progress-bar .is-complete:not(:first-child):after,
+    .custom-progress-bar .is-active:not(:first-child):after {
+        content: "";
+        display: block;
+        width: 100%;
+        position: absolute;
+        bottom: -2px;
+        left: -50%;
+        z-index: 2;
+        border-bottom: 2px solid #53a318;
+    }
+    .custom-progress-bar li:last-child span {
+        width: 200%;
+        display: inline-block;
+        position: absolute;
+        left: -100%;
+    }
+
+    .custom-progress-bar .is-complete:last-child:after,
+    .custom-progress-bar .is-active:last-child:after {
+        width: 200%;
+        left: -100%;
+    }
+
+    .custom-progress-bar .is-complete:before {
+        background-color: #53a318;
+    }
+
+    .custom-progress-bar .is-active:before,
+    .custom-progress-bar li:hover:before,
+    .custom-progress-bar .is-hovered:before {
+        background-color: #fff;
+        border-color: #53a318;
+    }
+    .custom-progress-bar li:hover:before,
+    .custom-progress-bar .is-hovered:before {
+        transform: scale(1.33);
+    }
+
+    .custom-progress-bar li:hover span,
+    .custom-progress-bar li.is-hovered span {
+        opacity: 1;
+    }
+
+    .custom-progress-bar:hover li:not(:hover) span {
+        opacity: 0;
+    }
+
+
+    .custom-progress-bar .has-changes {
+        opacity: 1 !important;
+    }
+    .custom-progress-bar .has-changes:before {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        left: calc(50% - 4px);
+        bottom: -20px;
+        background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%208%208%22%3E%3Cpath%20fill%3D%22%23ed1c24%22%20d%3D%22M4%200l4%208H0z%22%2F%3E%3C%2Fsvg%3E');
+    }
+
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
