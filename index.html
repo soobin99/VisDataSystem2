@@ -6,7 +6,6 @@
   <script src="https://d3js.org/d3.v4.js"></script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto'>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('css', filename='site.css')}}" />
   <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -45,10 +44,15 @@
               <div class="form-group question" id="div_diff1">
                 <label class="control-label " style="pointer-events: none;">
                   <img id="question-Image" src=" " style="max-width: 100%" />
-                  <h4 id="question-Text"><b>Test </b></h4>
+                  <h4 id="question-Text"><b>Test</b></h4>
                 </label>
                 <div style="text-align: center">
                   <div class=" " id="responses-Text" style="font-size:larger; display: inline-block;
+                                            text-align: left;">
+                  </div>
+                </div>
+                <div style="text-align: center">
+                  <div class=" " id="TLX-Survey" style="font-size:larger; display: inline-block;
                                             text-align: left;">
                   </div>
                 </div>
@@ -63,23 +67,11 @@
       <script type="text/javascript" src="js/StimuliFunctions.js"></script>
 
       <script>
-        window.onload = start();
-        setTimeout(function() {
-          window.location.href = "/quest";
-        }, 65 * 60 * 1000);
+        //setTimeout(function() {
+          //window.location.href = "/quest";
+        //}, 65 * 60 * 1000);
       </script>
 
-
-
-      <!--
-                <div>
-                        <canvas id='canvas' width="400"  height="160" style='outline: 1.5px black solid; margin-bottom: 1em; margin-top: 1em;'></canvas>
-                        <script type="text/javascript" src="../static/js/game.js"></script>
-
-                </div>
-                -->
-
-      <!--<p><button class="w3-button w3-blue-gray w3-round-xlarge w3-margin-bottom" onclick="window.location.href='/trans'">Next</button></p>-->
       <p><button type="button" onclick="next()" id="NxtButton" class="w3-button w3-blue-gray w3-round-xlarge w3-margin-bottom">Next</button></p>
 
 
