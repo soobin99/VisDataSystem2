@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto'>
+  <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+  <style>
+    body {
+      background-color: #FAF5F0;
+    }
+
+    #TLXradio {
+      text-align: center;
+      position: relative;
+      left: -13px;
+      top: 15px;
+    }
+
+    #TLXradio100 {
+      text-align: center;
+      position: relative;
+      left: -20px;
+      top: 15px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="w3-container center">
+    <div class="row">
+      <div class="col-lg-7">
+        <div id="mycard" class="w3-card w3-white w3-center">
+          <h1>Part 2</h1>
+          <br>
+          <h5>차트 아래의 질문에 답하십시오.</h5>
+          <br>
+          <div class="center">
+            <form method="post" id="stimuli">
+              <div class="form-group question" id="div_diff1">
+                <label class="control-label " style="pointer-events: none; text-align: center;">
+                  <img id="question-Image" src=" " style="max-width: 100%" />
+                  <h4 id="question-Text" style="text-align: center; margin-top:3%; width: 90%;"><b>Test</b></h4>
+                </label>
+                <div style="text-align: center">
+                  <div id="responses-Text" style="font-size:larger; display: inline-block; text-align: left; margin-top:3%; margin-bottom: 3%;"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div style="text-align: center">
+          <div id='TLXcard' class="w3-card w3-white w3-center">
+            <h2 style="padding-top:5px;">NASA-TLX</h2>
+            <br>
+            <h5>문제를 해결 후 아래의 설문에 답하십시오.</h5>
+            <hr>
+            <div style="margin-bottom: 3%; margin-top: 3%;">
+              <p>문제가 얼마나 어려웠습니까?</p>
+              <form id="MentalDemand" method="post" style="margin-top:0;">
+                <input name='mentalDemand' type='radio' value='0' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>0</label>
+                <input name='mentalDemand' type='radio' value='5' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>5</label>
+                <input name='mentalDemand' type='radio' value='10' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>10</label>
+                <input name='mentalDemand' type='radio' value='15' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>15</label>
+                <input name='mentalDemand' type='radio' value='20' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>20</label>
+                <input name='mentalDemand' type='radio' value='25' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>25</label>
+                <input name='mentalDemand' type='radio' value='30' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>30</label>
+                <input name='mentalDemand' type='radio' value='35' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>35</label>
+                <input name='mentalDemand' type='radio' value='40' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>40</label>
+                <input name='mentalDemand' type='radio' value='45' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>45</label>
+                <input name='mentalDemand' type='radio' value='50' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>50</label>
+                <input name='mentalDemand' type='radio' value='55' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>55</label>
+                <input name='mentalDemand' type='radio' value='60' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>60</label>
+                <input name='mentalDemand' type='radio' value='65' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>65</label>
+                <input name='mentalDemand' type='radio' value='70' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>70</label>
+                <input name='mentalDemand' type='radio' value='75' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>75</label>
+                <input name='mentalDemand' type='radio' value='80' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>80</label>
+                <input name='mentalDemand' type='radio' value='85' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>85</label>
+                <input name='mentalDemand' type='radio' value='90' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>90</label>
+                <input name='mentalDemand' type='radio' value='95' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>95</label>
+                <input name='mentalDemand' type='radio' value='100' required /><label class='radio' id='TLXradio100' style=':hover {border:none}'>100</label>
+              </form>
+            </div>
+            <hr>
+            <div style="margin-bottom: 3%;">
+              <p>문제를 푸는데 신체적으로 얼마나 어려웠습니까?</p>
+              <form id="PhysicalDemand" method="post">
+                <input name='PhysicalDemand' type='radio' value='0' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>0</label>
+                <input name='PhysicalDemand' type='radio' value='5' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>5</label>
+                <input name='PhysicalDemand' type='radio' value='10' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>10</label>
+                <input name='PhysicalDemand' type='radio' value='15' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>15</label>
+                <input name='PhysicalDemand' type='radio' value='20' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>20</label>
+                <input name='PhysicalDemand' type='radio' value='25' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>25</label>
+                <input name='PhysicalDemand' type='radio' value='30' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>30</label>
+                <input name='PhysicalDemand' type='radio' value='35' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>35</label>
+                <input name='PhysicalDemand' type='radio' value='40' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>40</label>
+                <input name='PhysicalDemand' type='radio' value='45' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>45</label>
+                <input name='PhysicalDemand' type='radio' value='50' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>50</label>
+                <input name='PhysicalDemand' type='radio' value='55' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>55</label>
+                <input name='PhysicalDemand' type='radio' value='60' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>60</label>
+                <input name='PhysicalDemand' type='radio' value='65' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>65</label>
+                <input name='PhysicalDemand' type='radio' value='70' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>70</label>
+                <input name='PhysicalDemand' type='radio' value='75' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>75</label>
+                <input name='PhysicalDemand' type='radio' value='80' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>80</label>
+                <input name='PhysicalDemand' type='radio' value='85' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>85</label>
+                <input name='PhysicalDemand' type='radio' value='90' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>90</label>
+                <input name='PhysicalDemand' type='radio' value='95' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>95</label>
+                <input name='PhysicalDemand' type='radio' value='100' required /><label class='radio' id='TLXradio100' style=':hover {border:none}'>100</label>
+              </form>
+            </div>
+            <hr>
+            <div style="margin-bottom: 3%;">
+              <p>문제를 푸는데 시간적 압박을 느꼈습니까?</p>
+              <form id="TemporalDemand" method="post">
+                <input name='TemporalDemand' type='radio' value='0' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>0</label>
+                <input name='TemporalDemand' type='radio' value='5' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>5</label>
+                <input name='TemporalDemand' type='radio' value='10' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>10</label>
+                <input name='TemporalDemand' type='radio' value='15' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>15</label>
+                <input name='TemporalDemand' type='radio' value='20' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>20</label>
+                <input name='TemporalDemand' type='radio' value='25' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>25</label>
+                <input name='TemporalDemand' type='radio' value='30' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>30</label>
+                <input name='TemporalDemand' type='radio' value='35' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>35</label>
+                <input name='TemporalDemand' type='radio' value='40' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>40</label>
+                <input name='TemporalDemand' type='radio' value='45' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>45</label>
+                <input name='TemporalDemand' type='radio' value='50' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>50</label>
+                <input name='TemporalDemand' type='radio' value='55' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>55</label>
+                <input name='TemporalDemand' type='radio' value='60' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>60</label>
+                <input name='TemporalDemand' type='radio' value='65' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>65</label>
+                <input name='TemporalDemand' type='radio' value='70' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>70</label>
+                <input name='TemporalDemand' type='radio' value='75' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>75</label>
+                <input name='TemporalDemand' type='radio' value='80' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>80</label>
+                <input name='TemporalDemand' type='radio' value='85' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>85</label>
+                <input name='TemporalDemand' type='radio' value='90' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>90</label>
+                <input name='TemporalDemand' type='radio' value='95' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>95</label>
+                <input name='TemporalDemand' type='radio' value='100' required /><label class='radio' id='TLXradio100' style=':hover {border:none}'>100</label>
+
+              </form>
+            </div>
+            <hr>
+            <div style="margin-bottom: 3%;">
+              <p>문제를 푸는데 얼마나 집중하고 신경을 썼습니까?</p>
+              <form id="Effort" method="post">
+                <input name='Effort' type='radio' value='0' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>0</label>
+                <input name='Effort' type='radio' value='5' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>5</label>
+                <input name='Effort' type='radio' value='10' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>10</label>
+                <input name='Effort' type='radio' value='15' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>15</label>
+                <input name='Effort' type='radio' value='20' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>20</label>
+                <input name='Effort' type='radio' value='25' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>25</label>
+                <input name='Effort' type='radio' value='30' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>30</label>
+                <input name='Effort' type='radio' value='35' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>35</label>
+                <input name='Effort' type='radio' value='40' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>40</label>
+                <input name='Effort' type='radio' value='45' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>45</label>
+                <input name='Effort' type='radio' value='50' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>50</label>
+                <input name='Effort' type='radio' value='55' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>55</label>
+                <input name='Effort' type='radio' value='60' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>60</label>
+                <input name='Effort' type='radio' value='65' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>65</label>
+                <input name='Effort' type='radio' value='70' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>70</label>
+                <input name='Effort' type='radio' value='75' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>75</label>
+                <input name='Effort' type='radio' value='80' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>80</label>
+                <input name='Effort' type='radio' value='85' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>85</label>
+                <input name='Effort' type='radio' value='90' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>90</label>
+                <input name='Effort' type='radio' value='95' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>95</label>
+                <input name='Effort' type='radio' value='100' required /><label class='radio' id='TLXradio100' style=':hover {border:none}'>100</label>
+              </form>
+            </div>
+            <hr>
+            <div style="margin-bottom: 3%;">
+              <p>문제를 얼마나 정확하게 푼 것 같습니까? (정답에 대한 확신)</p>
+              <form id="Performance" method="post">
+                <input name='Performance' type='radio' value='0' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>0</label>
+                <input name='Performance' type='radio' value='5' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>5</label>
+                <input name='Performance' type='radio' value='10' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>10</label>
+                <input name='Performance' type='radio' value='15' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>15</label>
+                <input name='Performance' type='radio' value='20' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>20</label>
+                <input name='Performance' type='radio' value='25' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>25</label>
+                <input name='Performance' type='radio' value='30' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>30</label>
+                <input name='Performance' type='radio' value='35' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>35</label>
+                <input name='Performance' type='radio' value='40' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>40</label>
+                <input name='Performance' type='radio' value='45' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>45</label>
+                <input name='Performance' type='radio' value='50' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>50</label>
+                <input name='Performance' type='radio' value='55' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>55</label>
+                <input name='Performance' type='radio' value='60' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>60</label>
+                <input name='Performance' type='radio' value='65' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>65</label>
+                <input name='Performance' type='radio' value='70' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>70</label>
+                <input name='Performance' type='radio' value='75' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>75</label>
+                <input name='Performance' type='radio' value='80' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>80</label>
+                <input name='Performance' type='radio' value='85' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>85</label>
+                <input name='Performance' type='radio' value='90' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>90</label>
+                <input name='Performance' type='radio' value='95' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>95</label>
+                <input name='Performance' type='radio' value='100' required /><label class='radio' id='TLXradio100' style=':hover {border:none}'>100</label>
+
+              </form>
+            </div>
+            <hr>
+            <div style="margin-bottom: 3%;">
+              <p>문제를 직면하고 해결하는데 있어서 당황스럽거나 부담스러웠던 정도가 어떻게 됩니까?</p>
+              <form id="Frustration" method="post">
+                <input name='Frustration' type='radio' value='0' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>0</label>
+                <input name='Frustration' type='radio' value='5' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>5</label>
+                <input name='Frustration' type='radio' value='10' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>10</label>
+                <input name='Frustration' type='radio' value='15' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>15</label>
+                <input name='Frustration' type='radio' value='20' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>20</label>
+                <input name='Frustration' type='radio' value='25' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>25</label>
+                <input name='Frustration' type='radio' value='30' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>30</label>
+                <input name='Frustration' type='radio' value='35' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>35</label>
+                <input name='Frustration' type='radio' value='40' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>40</label>
+                <input name='Frustration' type='radio' value='45' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>45</label>
+                <input name='Frustration' type='radio' value='50' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>50</label>
+                <input name='Frustration' type='radio' value='55' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>55</label>
+                <input name='Frustration' type='radio' value='60' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>60</label>
+                <input name='Frustration' type='radio' value='65' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>65</label>
+                <input name='Frustration' type='radio' value='70' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>70</label>
+                <input name='Frustration' type='radio' value='75' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>75</label>
+                <input name='Frustration' type='radio' value='80' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>80</label>
+                <input name='Frustration' type='radio' value='85' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>85</label>
+                <input name='Frustration' type='radio' value='90' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>90</label>
+                <input name='Frustration' type='radio' value='95' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>95</label>
+                <input name='Frustration' type='radio' value='100' required /><label class='radio' id='TLXradio100' style=':hover {border:none}'>100</label>
+
+
+              </form>
+            </div>
+            <hr>
+            <br>
+            <p><button type="button" onclick="next()" id="NxtButton" class="w3-button w3-blue-gray w3-round-xlarge w3-margin-bottom">Next</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</body>
+<script type="text/javascript" src="js/StimuliFunctions.js"></script>
+<script type="text/javascript" src="js/questions.js"></script>
+
+</html>

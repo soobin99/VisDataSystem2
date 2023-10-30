@@ -1,16 +1,14 @@
 const questionText = document.getElementById("question-Text");
 const questionImage = document.getElementById("question-Image");
 const responsesText = document.getElementById("responses-Text");
-const responsesSurvey = document.getElementById("TLX-Survey");
-
+import {userName} from "name.js"
 let questionCounter = 0;
 let currentQuestion;
 let availableQuestions = [];
 let OrderedCounter = 0;
-
 var VisParameters = {
   Number: [],
-  QuestionText: [],
+  //QuestionText: [],
   Type: [],
   Density: [],
   Level: [],
@@ -20,13 +18,28 @@ var VisParameters = {
   ResponseTime: [],
   StartTime: [],
   EndTime: [],
-  QNum: []
+  QNum: [],
+  MentalDemand: [],
+  PhysicalDemand: [],
+  TemporalDemand: [],
+  Effort: [],
+  Performance: [],
+  Frustration: []
 };
+var StartTime;
 
-//let seen = [];
 
-//where to put StartTime variable?
-var StartTime = Date.now();
+window.onload = function() {
+  StartTime = Date.now();
+  console.log(StartTime);
+  setAvailableQuestions();
+  //#If you want randomized questions
+  getNewQuestion();
+
+  //#if you want ordered questions
+  //OrderedQuestions();
+
+};
 
 //#Jquery function that randomizes the responses
 $.fn.randomize = function(selector) {
@@ -59,24 +72,23 @@ function getNewQuestion() {
   StartTime = Date.now();
   document.getElementById("NxtButton").disabled = false;
   responsesText.style.display = "inline-block";
-  responsesSurvey.style.display = "inline-block";
 
   //#get random question
   const questionIndex = availableQuestions[Math.floor(Math.random() * availableQuestions.length)]
   currentQuestion = questionIndex;
   questionText.innerHTML = currentQuestion.q;
   responsesText.innerHTML = currentQuestion.options;
-  responsesSurvey.innerHTML = '문제가 얼마나 어려웠습니까?'+TLXAnswerMD+
-                              '문제를 푸는데 신체적으로 얼마나 어려웠습니까?'+TLXAnswerPD+
-                              '문제를 푸는데 시간적 압박을 느꼈습니까?'+TLXAnswerTD+
-                              '문제를 푸는데 얼마나 집중하고 신경을 썼습니까?'+TLXAnswerEF+
-                              '문제를 얼마나 정확하게 푼 것 같습니까? (정답에 대한 확신)'+TLXAnswerPF+
-                              '문제를 직면하고 해결하는데 있어서 당황스럽거나 부담스러웠던 정도가 어떻게 됩니까?'+TLXAnswerFR;
   questionImage.src = currentQuestion.image;
   questionImage.style.maxWidth = "100%";
   questionImage.style.maxHeight = "100%";
   //#call randomization of radio buttons
   $('.question').randomize('.radio');
+  $("input:radio[name='mentalDemand']").prop('checked', false);
+  $("input:radio[name='PhysicalDemand']").prop('checked', false);
+  $("input:radio[name='TemporalDemand']").prop('checked', false);
+  $("input:radio[name='Effort']").prop('checked', false);
+  $("input:radio[name='Performance']").prop('checked', false);
+  $("input:radio[name='Frustration']").prop('checked', false);
 
   //#get position of 'questionIndex' from the availableQuestion Array
   const index1 = availableQuestions.indexOf(questionIndex);
@@ -88,26 +100,59 @@ function getNewQuestion() {
 };
 
 //#set questions and options ordered
-function OrderedQuestions(){
-    //#get questions in order of dictionary
-    const questionIndex = availableQuestions[OrderedCounter]
-    currentQuestion = questionIndex;
-    questionText.innerHTML = currentQuestion.q;
-    responsesText.innerHTML = currentQuestion.options;
-    //responsesSurvey.innerHTML = ;
-    questionImage.src = currentQuestion.image;
-    $('.question').randomize('.radio-inline');
-    OrderedCounter++;
-    questionCounter++;
+function OrderedQuestions() {
+  //#get questions in order of dictionary
+  const questionIndex = availableQuestions[OrderedCounter]
+  currentQuestion = questionIndex;
+  questionText.innerHTML = currentQuestion.q;
+  responsesText.innerHTML = currentQuestion.options;
+  questionImage.src = currentQuestion.image;
+  $('.question').randomize('.radio-inline');
+  OrderedCounter++;
+  questionCounter++;
 
 };
 
 
 //#what to do when you hit the next button - is there where I should put the calls to send to the database?
 function next() {
-  var EndTime = Date.now()
-  if ($("#stimuli")[0].checkValidity()) {
+  var EndTime = Date.now();
+  console.log(EndTime);
+  if ($("#stimuli")[0].checkValidity() && $("#MentalDemand")[0].checkValidity() &&
+    $("#PhysicalDemand")[0].checkValidity() && $("#TemporalDemand")[0].checkValidity() &&
+    $("#Effort")[0].checkValidity() && $("#Performance")[0].checkValidity() &&
+    $("#Frustration")[0].checkValidity()) {
     var ans = document.querySelector('input[name="diff1"]:checked').value;
+    var MentalDemand = document.querySelector('input[name="mentalDemand"]:checked').value;
+    var PhysicalDemand = document.querySelector('input[name="PhysicalDemand"]:checked').value;
+    var TemporalDemand = document.querySelector('input[name="TemporalDemand"]:checked').value;
+    var Effort = document.querySelector('input[name="Effort"]:checked').value;
+    var Performance = document.querySelector('input[name="Performance"]:checked').value;
+    var Frustration = document.querySelector('input[name="Frustration"]:checked').value;
+
+    VisParameters.Number.push(questionCounter);
+    //VisParameters.QuestionText.push(currentQuestion.q);
+    VisParameters.Type.push(currentQuestion.type);
+    VisParameters.Density.push(currentQuestion.density);
+    VisParameters.Level.push(currentQuestion.level);
+    VisParameters.CorrectAnswer.push(currentQuestion.answer);
+    VisParameters.Response.push(ans);
+    VisParameters.Correct.push((currentQuestion.answer === ans));
+    VisParameters.ResponseTime.push((EndTime - StartTime));
+    VisParameters.StartTime.push(StartTime);
+    VisParameters.EndTime.push(EndTime);
+    VisParameters.QNum.push(currentQuestion.qnum);
+    VisParameters.MentalDemand.push(MentalDemand);
+    VisParameters.PhysicalDemand.push(PhysicalDemand);
+    VisParameters.TemporalDemand.push(TemporalDemand);
+    VisParameters.Effort.push(Effort);
+    VisParameters.Performance.push(Performance);
+    VisParameters.Frustration.push(Frustration);
+    console.log(VisParameters);
+
+    //test
+    downloadDictionaryAsCSV(VisParameters, 'data.csv');
+
     if (questionCounter < 15) {
       getNewQuestion();
     } else if (questionCounter > 14 && questionCounter < 29) {
@@ -124,59 +169,47 @@ function next() {
     } else {
       getNewQuestion();
     }
-
-
-    //seen.push(questionCounter)
-    //document.getElementById("NxtButton").disabled = true;
-    //responsesText.style.display = "none";
-
-    VisParameters.Number.push(questionCounter);
-    VisParameters.QuestionText.push(currentQuestion.q);
-    VisParameters.Type.push(currentQuestion.type);
-    VisParameters.Density.push(currentQuestion.density);
-    VisParameters.Level.push(currentQuestion.level);
-    VisParameters.CorrectAnswer.push(currentQuestion.answer);
-    VisParameters.Response.push(ans);
-    VisParameters.Correct.push((currentQuestion.answer === ans));
-    VisParameters.ResponseTime.push((EndTime - StartTime));
-    VisParameters.StartTime.push(StartTime);
-    VisParameters.EndTime.push(EndTime);
-    VisParameters.QNum.push(currentQuestion.qnum);
-    console.log(VisParameters);
-
-    //update database
-    /*
-    $.ajax({
-        type: 'POST',
-        contentType: 'application/json',
-        url: '/VISParameters',
-        dataType: 'json',
-        data: JSON.stringify(VisParameters),
-        success: function (result) {
-            console.log(result);
-        },
-        error: function (result) {
-            console.log(result);
-        }
-    });
-    */
-
   } else {
     //Validate Form
-    $("#stimuli")[0].reportValidity()
+    if (!$("#stimuli")[0].checkValidity()) $("#stimuli")[0].reportValidity();
+    if (!$("#MentalDemand")[0].checkValidity()) $("#MentalDemand")[0].reportValidity();
+    if (!$("#PhysicalDemand")[0].checkValidity()) $("#PhysicalDemand")[0].reportValidity();
+    if (!$("#TemporalDemand")[0].checkValidity()) $("#TemporalDemand")[0].reportValidity();
+    if (!$("#Effort")[0].checkValidity()) $("#Effort")[0].reportValidity();
+    if (!$("#Performance")[0].checkValidity()) $("#Performance")[0].reportValidity();
+    if (!$("#Frustration")[0].checkValidity()) $("#Frustration")[0].reportValidity();
   }
-
 };
 
 
-window.onload = function() {
+function downloadDictionaryAsCSV(dictionary, filename) {
+  // Convert the dictionary to a CSV string
+  const csvLines = [];
+  const keys = Object.keys(dictionary);
+  const values = keys.map(key => dictionary[key]);
 
-  setAvailableQuestions();
-  //#If you want randomized questions
-  getNewQuestion();
+  // Add header row with dictionary keys
+  csvLines.push(keys.join(','));
+  // Add a row with the dictionary values
+  csvLines.push(values.join(','));
 
-  //#if you want ordered questions
-  //OrderedQuestions();
+  // Create a CSV string
+  const csvContent = csvLines.join('\n');
 
+  // Create a Blob with the CSV content
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
 
-};
+  // Create a link element
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = filename;
+
+  // Append link to the body
+  document.body.appendChild(link);
+
+  // Force a download
+  link.click();
+
+  // Clean up and remove the link
+  link.parentNode.removeChild(link);
+}

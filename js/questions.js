@@ -1,152 +1,19 @@
-var EasyAnswer = "<label class='radio' style=':hover {border:none}'>" + "<input name='diff1' type='radio' value='Higher' required />" +
-  "더 높습니다" + "</label>" + "<label class='radio' style=':hover {border:none}'>" +
+var EasyAnswer = "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Higher' required />" +
+  "더 높습니다" + "</label>" + "<label class='radio' style='margin-left:15px;'>" +
   "<input name='diff1' type='radio' value='Lower' required/>" + "더 낮습니다" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='diff1' type='radio' value='Same' required/>" +
+  "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Same' required/>" +
   "같습니다" + " </label>";
 
 var MediumQuestionHigh = "사망자 수(deaths)가 가장 높은 3개국 중 입원률(hospitalizations)이 가장 많은 국가는 어디입니까?";
 var MediumQuestionLow = "사망자 수(deaths)가 가장 적은 3개국 중 입원률(hospitalizations)이 가장 낮은 국가는 어디입니까?"
 
 var DifficultAnswer =
-  "<label class='radio'>" + "<input name='diff1' type='radio' value='Less33' required/>" +
+  "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Less33' required/>" +
   "<sup>1</sup>&frasl;<sub>3</sub> 이하" + "</label>" +
-  "<label class='radio'>" + "<input name='diff1' type='radio' value='33-66' required/>" +
+  "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='33-66' required/>" +
   "<sup>1</sup>&frasl;<sub>3</sub> -- <sup>2</sup>&frasl;<sub>3</sub> </label>" +
-  "<label class='radio'>" + "<input name='diff1' type='radio' value='More66' required/>" +
+  "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='More66' required/>" +
   "<sup>2</sup>&frasl;<sub>3</sub> 이상 </label>";
-
-var TLXAnswerMD = "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='0' required />" + "0" + "</label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='5' required/>" + "5" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='10' required/>" + "10" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='15' required/>" + "15" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='20' required/>" + "20" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='25' required/>" + "25" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='30' required/>" + "30" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='35' required/>" + "35" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='40' required/>" + "40" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='45' required/>" + "45" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='50' required/>" + "50" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='55' required/>" + "55" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='60' required/>" + "60" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='65' required/>" + "65" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='70' required/>" + "70" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='75' required/>" + "75" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='80' required/>" + "80" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='85' required/>" + "85" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='90' required/>" + "90" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='95' required/>" + "95" + " </label>" +
-  "<label class='radio' style=':hover {border:none}'>" + "<input name='mentalDemand' type='radio' value='100' required/>" + "100" + " </label>";
-
-  var TLXAnswerPD = "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='0' required />" + "0" + "</label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='5' required/>" + "5" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='10' required/>" + "10" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='15' required/>" + "15" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='20' required/>" + "20" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='25' required/>" + "25" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='30' required/>" + "30" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='35' required/>" + "35" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='40' required/>" + "40" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='45' required/>" + "45" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='50' required/>" + "50" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='55' required/>" + "55" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='60' required/>" + "60" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='65' required/>" + "65" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='70' required/>" + "70" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='75' required/>" + "75" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='80' required/>" + "80" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='85' required/>" + "85" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='90' required/>" + "90" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='95' required/>" + "95" + " </label>" +
-    "<label class='radio' style=':hover {border:none}'>" + "<input name='PhysicalDemand' type='radio' value='100' required/>" + "100" + " </label>";
-
-    var TLXAnswerTD = "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='0' required />" + "0" + "</label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='5' required/>" + "5" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='10' required/>" + "10" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='15' required/>" + "15" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='20' required/>" + "20" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='25' required/>" + "25" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='30' required/>" + "30" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='35' required/>" + "35" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='40' required/>" + "40" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='45' required/>" + "45" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='50' required/>" + "50" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='55' required/>" + "55" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='60' required/>" + "60" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='65' required/>" + "65" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='70' required/>" + "70" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='75' required/>" + "75" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='80' required/>" + "80" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='85' required/>" + "85" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='90' required/>" + "90" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='95' required/>" + "95" + " </label>" +
-      "<label class='radio' style=':hover {border:none}'>" + "<input name='TemporalDemand' type='radio' value='100' required/>" + "100" + " </label>";
-
-      var TLXAnswerEF = "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='0' required />" + "0" + "</label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='5' required/>" + "5" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='10' required/>" + "10" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='15' required/>" + "15" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='20' required/>" + "20" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='25' required/>" + "25" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='30' required/>" + "30" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='35' required/>" + "35" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='40' required/>" + "40" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='45' required/>" + "45" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='50' required/>" + "50" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='55' required/>" + "55" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='60' required/>" + "60" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='65' required/>" + "65" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='70' required/>" + "70" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='75' required/>" + "75" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='80' required/>" + "80" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='85' required/>" + "85" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='90' required/>" + "90" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='95' required/>" + "95" + " </label>" +
-        "<label class='radio' style=':hover {border:none}'>" + "<input name='Effort' type='radio' value='100' required/>" + "100" + " </label>";
-
-        var TLXAnswerPF = "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='0' required />" + "0" + "</label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='5' required/>" + "5" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='10' required/>" + "10" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='15' required/>" + "15" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='20' required/>" + "20" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='25' required/>" + "25" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='30' required/>" + "30" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='35' required/>" + "35" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='40' required/>" + "40" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='45' required/>" + "45" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='50' required/>" + "50" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='55' required/>" + "55" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='60' required/>" + "60" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='65' required/>" + "65" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='70' required/>" + "70" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='75' required/>" + "75" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='80' required/>" + "80" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='85' required/>" + "85" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='90' required/>" + "90" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='95' required/>" + "95" + " </label>" +
-          "<label class='radio' style=':hover {border:none}'>" + "<input name='Performance' type='radio' value='100' required/>" + "100" + " </label>";
-
-          var TLXAnswerFR = "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='0' required />" + "0" + "</label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='5' required/>" + "5" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='10' required/>" + "10" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='15' required/>" + "15" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='20' required/>" + "20" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='25' required/>" + "25" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='30' required/>" + "30" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='35' required/>" + "35" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='40' required/>" + "40" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='45' required/>" + "45" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='50' required/>" + "50" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='55' required/>" + "55" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='60' required/>" + "60" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='65' required/>" + "65" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='70' required/>" + "70" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='75' required/>" + "75" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='80' required/>" + "80" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='85' required/>" + "85" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='90' required/>" + "90" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='95' required/>" + "95" + " </label>" +
-            "<label class='radio' style=':hover {border:none}'>" + "<input name='Frustration' type='radio' value='100' required/>" + "100" + " </label>";
-
 
 const Trainingsurvey = [{
     q: "프랑스에서 지난 달에 비해 12월의 case가 더 높습니까, 낮습니까, 아니면 같습니까?",
@@ -336,10 +203,10 @@ const AllStimuli = [{
   {
     q: MediumQuestionLow,
     image: "img/stimuli/Medium/Vert-Vert-7.png",
-    options: "<label class='radio'>" + "<input name='diff1' type='radio' value='Canada' required />" +
-      "Canada" + "</label>" + "<label class='radio'>" +
+    options: "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Canada' required />" +
+      "Canada" + "</label>" + "<label class='radio' style='margin-left:15px;'>" +
       "<input name='diff1' type='radio' value='Netherlands' required/>" + "Netherlands" + " </label>" +
-      "<label class='radio'>" + "<input name='diff1' type='radio' value='Malaysia' required/>" +
+      "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Malaysia' required/>" +
       "Malaysia" + " </label>",
     answer: "Canada",
     type: "Vert-Vert",
@@ -350,10 +217,10 @@ const AllStimuli = [{
   {
     q: MediumQuestionLow,
     image: "img/stimuli/Medium/Vert-Vert-14.png",
-    options: "<label class='radio'>" + "<input name='diff1' type='radio' value='Malaysia' required />" +
-      "Malaysia" + "</label>" + "<label class='radio'>" +
+    options: "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Malaysia' required />" +
+      "Malaysia" + "</label>" + "<label class='radio' style='margin-left:15px;'>" +
       "<input name='diff1' type='radio' value='Ireland' required/>" + "Ireland" + " </label>" +
-      "<label class='radio'>" + "<input name='diff1' type='radio' value='Finland' required/>" +
+      "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Finland' required/>" +
       "Finland" + " </label>",
     answer: "Ireland",
     type: "Vert-Vert",
@@ -364,10 +231,10 @@ const AllStimuli = [{
   {
     q: MediumQuestionLow,
     image: "img/stimuli/Medium/Vert-Horiz-7.png",
-    options: "<label class='radio'>" + "<input name='diff1' type='radio' value='Hungary' required />" +
-      "Hungary" + "</label>" + "<label class='radio'>" +
+    options: "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Hungary' required />" +
+      "Hungary" + "</label>" + "<label class='radio' style='margin-left:15px;'>" +
       "<input name='diff1' type='radio' value='Norway' required/>" + "Norway" + " </label>" +
-      "<label class='radio'>" + "<input name='diff1' type='radio' value='Czechia' required/>" +
+      "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Czechia' required/>" +
       "Czechia" + " </label>",
     answer: "Norway",
     type: "Vert-Horiz",
@@ -378,10 +245,10 @@ const AllStimuli = [{
   {
     q: MediumQuestionHigh,
     image: "img/stimuli/Medium/Vert-Horiz-14.png",
-    options: "<label class='radio'>" + "<input name='diff1' type='radio' value='Hungary' required />" +
-      "Hungary" + "</label>" + "<label class='radio'>" +
+    options: "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Hungary' required />" +
+      "Hungary" + "</label>" + "<label class='radio' style='margin-left:15px;'>" +
       "<input name='diff1' type='radio' value='France' required/>" + "France" + " </label>" +
-      "<label class='radio'>" + "<input name='diff1' type='radio' value='Slovenia' required/>" +
+      "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Slovenia' required/>" +
       "Slovenia" + " </label>",
     answer: "Hungary",
     type: "Vert-Horiz",
@@ -392,10 +259,10 @@ const AllStimuli = [{
   {
     q: MediumQuestionLow,
     image: "img/stimuli/Medium/Horiz-Vert-7.png",
-    options: "<label class='radio'>" + "<input name='diff1' type='radio' value='Hungary' required />" +
-      "Hungary" + "</label>" + "<label class='radio'>" +
+    options: "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Hungary' required />" +
+      "Hungary" + "</label>" + "<label class='radio' style='margin-left:15px;'>" +
       "<input name='diff1' type='radio' value='Austria' required/>" + "Austria" + " </label>" +
-      "<label class='radio'>" + "<input name='diff1' type='radio' value='Canada' required/>" +
+      "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Canada' required/>" +
       "Canada" + " </label>",
     answer: "Canada",
     type: "Horiz-Vert",
@@ -406,10 +273,10 @@ const AllStimuli = [{
   {
     q: MediumQuestionHigh,
     image: "img/stimuli/Medium/Horiz-Vert-14.png",
-    options: "<label class='radio'>" + "<input name='diff1' type='radio' value='Czechia' required />" +
-      "Czechia" + "</label>" + "<label class='radio'>" +
+    options: "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Czechia' required />" +
+      "Czechia" + "</label>" + "<label class='radio' style='margin-left:15px;'>" +
       "<input name='diff1' type='radio' value='Slovakia' required/>" + "Slovakia" + " </label>" +
-      "<label class='radio'>" + "<input name='diff1' type='radio' value='Croatia' required/>" +
+      "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Croatia' required/>" +
       "Croatia" + " </label>",
     answer: "Czechia",
     type: "Horiz-Vert",
@@ -420,10 +287,10 @@ const AllStimuli = [{
   {
     q: MediumQuestionHigh,
     image: "img/stimuli/Medium/Vert-Rad-7.png",
-    options: "<label class='radio'>" + "<input name='diff1' type='radio' value='Italy' required />" +
-      "Italy" + "</label>" + "<label class='radio'>" +
+    options: "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Italy' required />" +
+      "Italy" + "</label>" + "<label class='radio' style='margin-left:15px;'>" +
       "<input name='diff1' type='radio' value='Slovenia' required/>" + "Slovenia" + " </label>" +
-      "<label class='radio'>" + "<input name='diff1' type='radio' value='Canada' required/>" +
+      "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Canada' required/>" +
       "Canada" + " </label>",
     answer: "Slovenia",
     type: "Vert-Rad",
@@ -434,10 +301,10 @@ const AllStimuli = [{
   {
     q: MediumQuestionHigh,
     image: "img/stimuli/Medium/Vert-Rad-14.png",
-    options: "<label class='radio'>" + "<input name='diff1' type='radio' value='Serbia' required />" +
-      "Serbia" + "</label>" + "<label class='radio'>" +
+    options: "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Serbia' required />" +
+      "Serbia" + "</label>" + "<label class='radio' style='margin-left:15px;'>" +
       "<input name='diff1' type='radio' value='Poland' required/>" + "Poland" + " </label>" +
-      "<label class='radio'>" + "<input name='diff1' type='radio' value='France' required/>" +
+      "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='France' required/>" +
       "France" + " </label>",
     answer: "Serbia",
     type: "Vert-Rad",
@@ -448,10 +315,10 @@ const AllStimuli = [{
   {
     q: MediumQuestionLow,
     image: "img/stimuli/Medium/Rad-Vert-7.png",
-    options: "<label class='radio'>" + "<input name='diff1' type='radio' value='Italy' required />" +
-      "Italy" + "</label>" + "<label class='radio'>" +
+    options: "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Italy' required />" +
+      "Italy" + "</label>" + "<label class='radio' style='margin-left:15px;'>" +
       "<input name='diff1' type='radio' value='Luxembourg' required/>" + "Luxembourg" + " </label>" +
-      "<label class='radio'>" + "<input name='diff1' type='radio' value='Malta' required/>" +
+      "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Malta' required/>" +
       "Malta" + " </label>",
     answer: "Malta",
     type: "Rad-Vert",
@@ -462,10 +329,10 @@ const AllStimuli = [{
   {
     q: MediumQuestionHigh,
     image: "img/stimuli/Medium/Rad-Vert-14.png",
-    options: "<label class='radio'>" + "<input name='diff1' type='radio' value='Poland' required />" +
-      "Poland" + "</label>" + "<label class='radio'>" +
+    options: "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Poland' required />" +
+      "Poland" + "</label>" + "<label class='radio' style='margin-left:15px;'>" +
       "<input name='diff1' type='radio' value='Czechia' required/>" + "Czechia" + " </label>" +
-      "<label class='radio'>" + "<input name='diff1' type='radio' value='Italy' required/>" +
+      "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Italy' required/>" +
       "Italy" + " </label>",
     answer: "Poland",
     type: "Rad-Vert",
@@ -476,10 +343,10 @@ const AllStimuli = [{
   {
     q: MediumQuestionLow,
     image: "img/stimuli/Medium/Vert-Star-7.png",
-    options: "<label class='radio'>" + "<input name='diff1' type='radio' value='U.K.' required />" +
-      "U.K." + "</label>" + "<label class='radio'>" +
+    options: "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='U.K.' required />" +
+      "U.K." + "</label>" + "<label class='radio' style='margin-left:15px;'>" +
       "<input name='diff1' type='radio' value='Belgium' required/>" + "Belgium" + " </label>" +
-      "<label class='radio'>" + "<input name='diff1' type='radio' value='Czechia' required/>" +
+      "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Czechia' required/>" +
       "Czechia" + " </label>",
     answer: "U.K.",
     type: "Vert-Star",
@@ -490,10 +357,10 @@ const AllStimuli = [{
   {
     q: MediumQuestionHigh,
     image: "img/stimuli/Medium/Vert-Star-14.png",
-    options: "<label class='radio'>" + "<input name='diff1' type='radio' value='Italy' required />" +
-      "Italy" + "</label>" + "<label class='radio'>" +
+    options: "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Italy' required />" +
+      "Italy" + "</label>" + "<label class='radio' style='margin-left:15px;'>" +
       "<input name='diff1' type='radio' value='Spain' required/>" + "Spain" + " </label>" +
-      "<label class='radio'>" + "<input name='diff1' type='radio' value='Belgium' required/>" +
+      "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Belgium' required/>" +
       "Belgium" + " </label>",
     answer: "Italy",
     type: "Vert-Star",
@@ -504,10 +371,10 @@ const AllStimuli = [{
   {
     q: MediumQuestionHigh,
     image: "img/stimuli/Medium/Star-Vert-7.png",
-    options: "<label class='radio'>" + "<input name='diff1' type='radio' value='U.K.' required />" +
-      "U.K." + "</label>" + "<label class='radio'>" +
+    options: "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='U.K.' required />" +
+      "U.K." + "</label>" + "<label class='radio' style='margin-left:15px;'>" +
       "<input name='diff1' type='radio' value='Portugal' required/>" + "Portugal" + " </label>" +
-      "<label class='radio'>" + "<input name='diff1' type='radio' value='Israel' required/>" +
+      "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Israel' required/>" +
       "Israel" + " </label>",
     answer: "U.K.",
     type: "Star-Vert",
@@ -518,10 +385,10 @@ const AllStimuli = [{
   {
     q: MediumQuestionLow,
     image: "img/stimuli/Medium/Star-Vert-14.png",
-    options: "<label class='radio'>" + "<input name='diff1' type='radio' value='Malaysia' required />" +
-      "Malaysia" + "</label>" + "<label class='radio'>" +
+    options: "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Malaysia' required />" +
+      "Malaysia" + "</label>" + "<label class='radio' style='margin-left:15px;'>" +
       "<input name='diff1' type='radio' value='Slovakia' required/>" + "Slovakia" + " </label>" +
-      "<label class='radio'>" + "<input name='diff1' type='radio' value='Czechia' required/>" +
+      "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Czechia' required/>" +
       "Czechia" + " </label>",
     answer: "Malaysia",
     type: "Star-Vert",
