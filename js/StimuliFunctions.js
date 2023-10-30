@@ -123,7 +123,11 @@ function next() {
     var Effort = document.querySelector('input[name="Effort"]:checked').value;
     var Performance = document.querySelector('input[name="Performance"]:checked').value;
     var Frustration = document.querySelector('input[name="Frustration"]:checked').value;
-
+    if(currentQuestion==undefined){
+      console.log("quiz over");
+      alert('실험이 완료되었습니다. 저장된 파일을 (본인의 이름).csv로 변경해서 보내주세요. (ex : 임수빈.csv)');
+      downloadCSV(VisParameters);
+    }
     VisParameters.Number.push(questionCounter);
     //VisParameters.QuestionText.push(currentQuestion.q);
     VisParameters.Type.push(currentQuestion.type);
@@ -145,23 +149,22 @@ function next() {
     console.log(VisParameters);
 
     //test
-
     if (questionCounter < 15) {
       getNewQuestion();
     } else if (questionCounter > 14 && questionCounter < 29) {
       getNewQuestion();
-    } else if (questionCounter > 28 && questionCounter < (AllStimuli.length + 1)) {
+    } else if (questionCounter > 28 && questionCounter < (AllStimuli.length)) {
       getNewQuestion();
-    } else if (questionCounter == (AllStimuli.length + 1) && availableQuestions.length == 0) {
+    } else if (questionCounter == (AllStimuli.length) && availableQuestions.length == 0) {
       console.log("quiz over");
       alert('실험이 완료되었습니다. 저장된 파일을 (본인의 이름).csv로 변경해서 보내주세요. (ex : 임수빈.csv)');
-      downloadDictionaryAsCSV(VisParameters, 'data.csv');
+      downloadCSV(VisParameters);
       //localStorage.vis = JSON.stringify(VISParameters);
       //window.location.href = "/quest"
     } else if (availableQuestions.length == 0) {
       console.log("quiz over");
       alert('실험이 완료되었습니다. 저장된 파일을 (본인의 이름).csv로 변경해서 보내주세요. (ex : 임수빈.csv)');
-      downloadDictionaryAsCSV(VisParameters, 'data.csv');
+      downloadCSV(VisParameters);
       //window.location.href = "/quest"
     } else {
       getNewQuestion();
@@ -178,7 +181,7 @@ function next() {
   }
 };
 
-
+/*
 function downloadDictionaryAsCSV(dictionary, filename) {
   // Convert the dictionary to a CSV string
   const csvLines = [];
@@ -210,3 +213,53 @@ function downloadDictionaryAsCSV(dictionary, filename) {
   // Clean up and remove the link
   link.parentNode.removeChild(link);
 }
+*/
+
+function downloadCSV(VisParameters) {
+  // Create a CSV array with titles as the first row
+  const csvRows = [
+    Object.keys(VisParameters).join(','), // Header row
+  ];
+
+  // Determine the number of rows based on the length of the arrays
+  const numberOfRows = VisParameters.Number.length || 0;
+
+  // Loop over the number of rows to build each line
+  for (let i = 0; i < numberOfRows; i++) {
+    // Map the keys of the VisParameters to their respective values for the current index
+    const row = Object.keys(VisParameters).map(key => {
+      // Ensure undefined or null values are replaced by an empty string
+      const value = VisParameters[key][i] == null ? '' : VisParameters[key][i];
+      // If the value contains a comma or a new line, wrap it in double quotes
+      const escaped = value.toString().includes(',') ? `"${value}"` : value;
+      return escaped;
+    });
+
+    // Join all the row values by commas and push into csvRows
+    csvRows.push(row.join(','));
+  }
+
+  // Join all rows by new line characters to form the CSV string
+  const csvString = csvRows.join('\n');
+
+  // Create a Blob with the CSV data
+  const blob = new Blob([csvString], { type: 'text/csv' });
+
+  // Create an anchor element and dispatch a click event to trigger the download
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'vis-parameters.csv'; // Name the file here
+  document.body.appendChild(a);
+  a.click();
+
+  // Clean up the DOM by removing the anchor element if necessary
+  document.body.removeChild(a);
+}
+
+// Example usage:
+// Suppose you have some data in your VisParameters object...
+// Fill in the VisParameters object with some example data here
+// ...
+
+// Call the downloadCSV function to trigger the download
+downloadCSV(VisParameters);
