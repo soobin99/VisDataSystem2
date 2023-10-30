@@ -1,7 +1,6 @@
 const questionText = document.getElementById("question-Text");
 const questionImage = document.getElementById("question-Image");
 const responsesText = document.getElementById("responses-Text");
-import {userName} from "name.js"
 let questionCounter = 0;
 let currentQuestion;
 let availableQuestions = [];
@@ -30,16 +29,12 @@ var StartTime;
 
 
 window.onload = function() {
-  StartTime = Date.now();
-  console.log(StartTime);
-  setAvailableQuestions();
-  //#If you want randomized questions
-  getNewQuestion();
-
-  //#if you want ordered questions
-  //OrderedQuestions();
-
-};
+    StartTime = Date.now();
+    console.log(StartTime);
+    setAvailableQuestions();
+    //#If you want randomized questions
+    getNewQuestion();
+  };
 
 //#Jquery function that randomizes the responses
 $.fn.randomize = function(selector) {
@@ -119,9 +114,8 @@ function next() {
   var EndTime = Date.now();
   console.log(EndTime);
   if ($("#stimuli")[0].checkValidity() && $("#MentalDemand")[0].checkValidity() &&
-    $("#PhysicalDemand")[0].checkValidity() && $("#TemporalDemand")[0].checkValidity() &&
-    $("#Effort")[0].checkValidity() && $("#Performance")[0].checkValidity() &&
-    $("#Frustration")[0].checkValidity()) {
+      $("#PhysicalDemand")[0].checkValidity() && $("#TemporalDemand")[0].checkValidity() &&
+      $("#Effort")[0].checkValidity() && $("#Performance")[0].checkValidity() && $("#Frustration")[0].checkValidity()) {
     var ans = document.querySelector('input[name="diff1"]:checked').value;
     var MentalDemand = document.querySelector('input[name="mentalDemand"]:checked').value;
     var PhysicalDemand = document.querySelector('input[name="PhysicalDemand"]:checked').value;
@@ -151,7 +145,6 @@ function next() {
     console.log(VisParameters);
 
     //test
-    downloadDictionaryAsCSV(VisParameters, 'data.csv');
 
     if (questionCounter < 15) {
       getNewQuestion();
@@ -161,10 +154,14 @@ function next() {
       getNewQuestion();
     } else if (questionCounter == (AllStimuli.length + 1) && availableQuestions.length == 0) {
       console.log("quiz over");
+      alert('실험이 완료되었습니다. 저장된 파일을 (본인의 이름).csv로 변경해서 보내주세요. (ex : 임수빈.csv)');
+      downloadDictionaryAsCSV(VisParameters, 'data.csv');
       //localStorage.vis = JSON.stringify(VISParameters);
       //window.location.href = "/quest"
     } else if (availableQuestions.length == 0) {
       console.log("quiz over");
+      alert('실험이 완료되었습니다. 저장된 파일을 (본인의 이름).csv로 변경해서 보내주세요. (ex : 임수빈.csv)');
+      downloadDictionaryAsCSV(VisParameters, 'data.csv');
       //window.location.href = "/quest"
     } else {
       getNewQuestion();

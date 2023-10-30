@@ -11,7 +11,7 @@ var DifficultAnswer =
   "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='Less33' required/>" +
   "<sup>1</sup>&frasl;<sub>3</sub> 이하" + "</label>" +
   "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='33-66' required/>" +
-  "<sup>1</sup>&frasl;<sub>3</sub> -- <sup>2</sup>&frasl;<sub>3</sub> </label>" +
+  "<sup>1</sup>&frasl;<sub>3</sub> - <sup>2</sup>&frasl;<sub>3</sub> </label>" +
   "<label class='radio' style='margin-left:15px;'>" + "<input name='diff1' type='radio' value='More66' required/>" +
   "<sup>2</sup>&frasl;<sub>3</sub> 이상 </label>";
 
