@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto'>
   <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+  <link rel="stylesheet" type="text/css" href="css/site.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -17,20 +18,6 @@
     body {
       background-color: #FAF5F0;
     }
-
-    #TLXradio {
-      text-align: center;
-      position: relative;
-      left: -13px;
-      top: 15px;
-    }
-
-    #TLXradio100 {
-      text-align: center;
-      position: relative;
-      left: -20px;
-      top: 15px;
-    }
   </style>
 
 </head>
@@ -38,202 +25,599 @@
 <body>
   <div class="w3-container center">
     <div class="row">
-      <div class="col-lg-7">
+      <div class="col-lg-12">
         <div id="mycard" class="w3-card w3-white w3-center">
-          <h1>Part 2</h1>
-          <br>
-          <h5>차트 아래의 질문에 답하십시오.</h5>
-          <br>
-          <div class="center">
-            <form method="post" id="stimuli">
-              <div class="form-group question" id="div_diff1">
-                <label class="control-label " style="pointer-events: none; text-align: center;">
-                  <img id="question-Image" src=" " style="max-width: 100%" />
-                  <h4 id="question-Text" style="text-align: center; margin-top:3%; width: 90%;"><b>Test</b></h4>
-                </label>
-                <div style="text-align: center">
-                  <div id="responses-Text" style="font-size:larger; display: inline-block; text-align: left; margin-top:3%; margin-bottom: 3%;"></div>
-                </div>
+          <div id="Q1">
+            <h1>Question 1</h1>
+            </h4>
+            <div class="w3-container">
+              <input type="image" src="img/SpAb_Assess/1/q.PNG" width="35%" style="pointer-events: none; margin-top: 2em" />
+              <hr style="border: 2px solid black; width: 50%; margin: auto; margin-bottom: 2em; margin-top: 2em">
+              <div class="row" style="margin: auto">
+                <fieldset>
+                  <div class="column">
+                    <input type="radio" name="paper1" class="sr-only" id="A1" value="A">
+                    <label for="A1">
+                      <img src="img/SpAb_Assess/1/A.PNG" style="max-width: 100%" alt="A1">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper1" class="sr-only" id="B1" value="B">
+                    <label for="B1">
+                      <img src="img/SpAb_Assess/1/B.PNG" style="max-width: 100%" alt="B1">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper1" class="sr-only" id="C1" value="C">
+                    <label for="C1">
+                      <img src="img/SpAb_Assess/1/C.PNG" style="max-width: 100%" alt="C1">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper1" class="sr-only" id="D1" value="D">
+                    <label for="D1">
+                      <img src="img/SpAb_Assess/1/D.PNG" style="max-width: 100%" alt="D1">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper1" class="sr-only" id="E1" value="E">
+                    <label for="E1">
+                      <img src="img/SpAb_Assess/1/E.PNG" style="max-width: 100%" alt="E1">
+                    </label>
+                  </div>
+
+                </fieldset>
               </div>
-            </form>
+            </div>
+
+            <h4>정답을 선택하고 Next 버튼을 누르세요!</h4>
+            <p>
+              <button id="btn1" class="w3-button w3-blue-gray w3-round-xlarge w3-margin-bottom">Next</button>
+            </p>
+
+
           </div>
-        </div>
-      </div>
-      <div class="col-lg-5">
-        <div style="text-align: center">
-          <div id='TLXcard' class="w3-card w3-white w3-center">
-            <h2 style="padding-top:5px;">NASA-TLX</h2>
-            <br>
-            <h5>문제를 해결 후 아래의 설문에 답하십시오.</h5>
-            <hr>
-            <div style="margin-bottom: 3%; margin-top: 3%;">
-              <p>문제가 얼마나 어려웠습니까?</p>
-              <form id="MentalDemand" method="post" style="margin-top:0;">
-                <input name='mentalDemand' type='radio' value='0' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>0</label>
-                <input name='mentalDemand' type='radio' value='5' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>5</label>
-                <input name='mentalDemand' type='radio' value='10' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>10</label>
-                <input name='mentalDemand' type='radio' value='15' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>15</label>
-                <input name='mentalDemand' type='radio' value='20' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>20</label>
-                <input name='mentalDemand' type='radio' value='25' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>25</label>
-                <input name='mentalDemand' type='radio' value='30' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>30</label>
-                <input name='mentalDemand' type='radio' value='35' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>35</label>
-                <input name='mentalDemand' type='radio' value='40' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>40</label>
-                <input name='mentalDemand' type='radio' value='45' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>45</label>
-                <input name='mentalDemand' type='radio' value='50' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>50</label>
-                <input name='mentalDemand' type='radio' value='55' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>55</label>
-                <input name='mentalDemand' type='radio' value='60' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>60</label>
-                <input name='mentalDemand' type='radio' value='65' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>65</label>
-                <input name='mentalDemand' type='radio' value='70' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>70</label>
-                <input name='mentalDemand' type='radio' value='75' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>75</label>
-                <input name='mentalDemand' type='radio' value='80' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>80</label>
-                <input name='mentalDemand' type='radio' value='85' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>85</label>
-                <input name='mentalDemand' type='radio' value='90' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>90</label>
-                <input name='mentalDemand' type='radio' value='95' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>95</label>
-                <input name='mentalDemand' type='radio' value='100' required /><label class='radio' id='TLXradio100' style=':hover {border:none}'>100</label>
-              </form>
-            </div>
-            <hr>
-            <div style="margin-bottom: 3%;">
-              <p>문제를 푸는데 신체적으로 얼마나 어려웠습니까?</p>
-              <form id="PhysicalDemand" method="post">
-                <input name='PhysicalDemand' type='radio' value='0' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>0</label>
-                <input name='PhysicalDemand' type='radio' value='5' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>5</label>
-                <input name='PhysicalDemand' type='radio' value='10' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>10</label>
-                <input name='PhysicalDemand' type='radio' value='15' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>15</label>
-                <input name='PhysicalDemand' type='radio' value='20' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>20</label>
-                <input name='PhysicalDemand' type='radio' value='25' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>25</label>
-                <input name='PhysicalDemand' type='radio' value='30' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>30</label>
-                <input name='PhysicalDemand' type='radio' value='35' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>35</label>
-                <input name='PhysicalDemand' type='radio' value='40' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>40</label>
-                <input name='PhysicalDemand' type='radio' value='45' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>45</label>
-                <input name='PhysicalDemand' type='radio' value='50' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>50</label>
-                <input name='PhysicalDemand' type='radio' value='55' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>55</label>
-                <input name='PhysicalDemand' type='radio' value='60' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>60</label>
-                <input name='PhysicalDemand' type='radio' value='65' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>65</label>
-                <input name='PhysicalDemand' type='radio' value='70' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>70</label>
-                <input name='PhysicalDemand' type='radio' value='75' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>75</label>
-                <input name='PhysicalDemand' type='radio' value='80' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>80</label>
-                <input name='PhysicalDemand' type='radio' value='85' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>85</label>
-                <input name='PhysicalDemand' type='radio' value='90' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>90</label>
-                <input name='PhysicalDemand' type='radio' value='95' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>95</label>
-                <input name='PhysicalDemand' type='radio' value='100' required /><label class='radio' id='TLXradio100' style=':hover {border:none}'>100</label>
-              </form>
-            </div>
-            <hr>
-            <div style="margin-bottom: 3%;">
-              <p>문제를 푸는데 시간적 압박을 느꼈습니까?</p>
-              <form id="TemporalDemand" method="post">
-                <input name='TemporalDemand' type='radio' value='0' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>0</label>
-                <input name='TemporalDemand' type='radio' value='5' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>5</label>
-                <input name='TemporalDemand' type='radio' value='10' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>10</label>
-                <input name='TemporalDemand' type='radio' value='15' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>15</label>
-                <input name='TemporalDemand' type='radio' value='20' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>20</label>
-                <input name='TemporalDemand' type='radio' value='25' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>25</label>
-                <input name='TemporalDemand' type='radio' value='30' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>30</label>
-                <input name='TemporalDemand' type='radio' value='35' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>35</label>
-                <input name='TemporalDemand' type='radio' value='40' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>40</label>
-                <input name='TemporalDemand' type='radio' value='45' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>45</label>
-                <input name='TemporalDemand' type='radio' value='50' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>50</label>
-                <input name='TemporalDemand' type='radio' value='55' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>55</label>
-                <input name='TemporalDemand' type='radio' value='60' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>60</label>
-                <input name='TemporalDemand' type='radio' value='65' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>65</label>
-                <input name='TemporalDemand' type='radio' value='70' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>70</label>
-                <input name='TemporalDemand' type='radio' value='75' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>75</label>
-                <input name='TemporalDemand' type='radio' value='80' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>80</label>
-                <input name='TemporalDemand' type='radio' value='85' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>85</label>
-                <input name='TemporalDemand' type='radio' value='90' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>90</label>
-                <input name='TemporalDemand' type='radio' value='95' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>95</label>
-                <input name='TemporalDemand' type='radio' value='100' required /><label class='radio' id='TLXradio100' style=':hover {border:none}'>100</label>
 
-              </form>
-            </div>
-            <hr>
-            <div style="margin-bottom: 3%;">
-              <p>문제를 푸는데 얼마나 집중하고 신경을 썼습니까?</p>
-              <form id="Effort" method="post">
-                <input name='Effort' type='radio' value='0' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>0</label>
-                <input name='Effort' type='radio' value='5' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>5</label>
-                <input name='Effort' type='radio' value='10' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>10</label>
-                <input name='Effort' type='radio' value='15' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>15</label>
-                <input name='Effort' type='radio' value='20' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>20</label>
-                <input name='Effort' type='radio' value='25' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>25</label>
-                <input name='Effort' type='radio' value='30' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>30</label>
-                <input name='Effort' type='radio' value='35' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>35</label>
-                <input name='Effort' type='radio' value='40' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>40</label>
-                <input name='Effort' type='radio' value='45' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>45</label>
-                <input name='Effort' type='radio' value='50' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>50</label>
-                <input name='Effort' type='radio' value='55' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>55</label>
-                <input name='Effort' type='radio' value='60' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>60</label>
-                <input name='Effort' type='radio' value='65' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>65</label>
-                <input name='Effort' type='radio' value='70' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>70</label>
-                <input name='Effort' type='radio' value='75' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>75</label>
-                <input name='Effort' type='radio' value='80' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>80</label>
-                <input name='Effort' type='radio' value='85' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>85</label>
-                <input name='Effort' type='radio' value='90' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>90</label>
-                <input name='Effort' type='radio' value='95' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>95</label>
-                <input name='Effort' type='radio' value='100' required /><label class='radio' id='TLXradio100' style=':hover {border:none}'>100</label>
-              </form>
-            </div>
-            <hr>
-            <div style="margin-bottom: 3%;">
-              <p>문제를 얼마나 정확하게 푼 것 같습니까? (정답에 대한 확신)</p>
-              <form id="Performance" method="post">
-                <input name='Performance' type='radio' value='0' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>0</label>
-                <input name='Performance' type='radio' value='5' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>5</label>
-                <input name='Performance' type='radio' value='10' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>10</label>
-                <input name='Performance' type='radio' value='15' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>15</label>
-                <input name='Performance' type='radio' value='20' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>20</label>
-                <input name='Performance' type='radio' value='25' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>25</label>
-                <input name='Performance' type='radio' value='30' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>30</label>
-                <input name='Performance' type='radio' value='35' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>35</label>
-                <input name='Performance' type='radio' value='40' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>40</label>
-                <input name='Performance' type='radio' value='45' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>45</label>
-                <input name='Performance' type='radio' value='50' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>50</label>
-                <input name='Performance' type='radio' value='55' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>55</label>
-                <input name='Performance' type='radio' value='60' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>60</label>
-                <input name='Performance' type='radio' value='65' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>65</label>
-                <input name='Performance' type='radio' value='70' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>70</label>
-                <input name='Performance' type='radio' value='75' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>75</label>
-                <input name='Performance' type='radio' value='80' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>80</label>
-                <input name='Performance' type='radio' value='85' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>85</label>
-                <input name='Performance' type='radio' value='90' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>90</label>
-                <input name='Performance' type='radio' value='95' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>95</label>
-                <input name='Performance' type='radio' value='100' required /><label class='radio' id='TLXradio100' style=':hover {border:none}'>100</label>
+          <div id="Q2" style="display: none;">
+            <h1>Question 2
+            </h1>
 
-              </form>
+            <div class="w3-container">
+              <input type="image" src="img/SpAb_Assess/2/q.PNG" width="45%" style="pointer-events: none; margin-top: 2em" />
+              <hr style="border: 2px solid black; width: 50%; margin: auto; margin-bottom: 2em; margin-top: 2em">
+              <div class="row" style="margin: auto">
+                <fieldset>
+                  <div class="column">
+                    <input type="radio" name="paper2" class="sr-only" id="A2" value="A">
+                    <label for="A2">
+                      <img src="img/SpAb_Assess/2/A.PNG" style="max-width: 100%" alt="A2">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper2" class="sr-only" id="B2" value="B">
+                    <label for="B2">
+                      <img src="img/SpAb_Assess/2/B.PNG" style="max-width: 100%" alt="B2">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper2" class="sr-only" id="C2" value="C">
+                    <label for="C2">
+                      <img src="img/SpAb_Assess/2/C.PNG" style="max-width: 100%" alt="C2">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper2" class="sr-only" id="D2" value="D">
+                    <label for="D2">
+                      <img src="img/SpAb_Assess/2/D.PNG" style="max-width: 100%" alt="D2">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper2" class="sr-only" id="E2" value="E">
+                    <label for="E2">
+                      <img src="img/SpAb_Assess/2/E.PNG" style="max-width: 100%" alt="E2">
+                    </label>
+                  </div>
+
+                </fieldset>
+              </div>
             </div>
-            <hr>
-            <div style="margin-bottom: 3%;">
-              <p>문제를 직면하고 해결하는데 있어서 당황스럽거나 부담스러웠던 정도가 어떻게 됩니까?</p>
-              <form id="Frustration" method="post">
-                <input name='Frustration' type='radio' value='0' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>0</label>
-                <input name='Frustration' type='radio' value='5' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>5</label>
-                <input name='Frustration' type='radio' value='10' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>10</label>
-                <input name='Frustration' type='radio' value='15' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>15</label>
-                <input name='Frustration' type='radio' value='20' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>20</label>
-                <input name='Frustration' type='radio' value='25' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>25</label>
-                <input name='Frustration' type='radio' value='30' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>30</label>
-                <input name='Frustration' type='radio' value='35' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>35</label>
-                <input name='Frustration' type='radio' value='40' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>40</label>
-                <input name='Frustration' type='radio' value='45' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>45</label>
-                <input name='Frustration' type='radio' value='50' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>50</label>
-                <input name='Frustration' type='radio' value='55' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>55</label>
-                <input name='Frustration' type='radio' value='60' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>60</label>
-                <input name='Frustration' type='radio' value='65' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>65</label>
-                <input name='Frustration' type='radio' value='70' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>70</label>
-                <input name='Frustration' type='radio' value='75' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>75</label>
-                <input name='Frustration' type='radio' value='80' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>80</label>
-                <input name='Frustration' type='radio' value='85' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>85</label>
-                <input name='Frustration' type='radio' value='90' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>90</label>
-                <input name='Frustration' type='radio' value='95' required /><label class='radio' id='TLXradio' style=':hover {border:none}'>95</label>
-                <input name='Frustration' type='radio' value='100' required /><label class='radio' id='TLXradio100' style=':hover {border:none}'>100</label>
+            <h4>정답을 선택하고 Next 버튼을 누르세요!</h4>
+            <p>
+              <button id="btn2" class="w3-button w3-blue-gray w3-round-xlarge w3-margin-bottom">Next</button>
+            </p>
 
 
-              </form>
+            <script>
+              $(document).ready(function() {
+
+                var $button = $("#btn2").hide(),
+                  $cbs = $('input[name="paper2"]').click(function() {
+                    $button.toggle($cbs.is(":checked"));
+                  });
+
+              });
+            </script>
+          </div>
+
+          <div id="Q3" style="display: none;">
+            <h1>Question 3
+            </h1>
+
+            <div class="w3-container">
+              <input type="image" src="img/SpAb_Assess/3/q.PNG" width="45%" style="pointer-events: none; margin-top: 2em" />
+              <hr style="border: 2px solid black; width: 50%; margin: auto; margin-bottom: 2em; margin-top: 2em">
+              <div class="row" style="margin: auto">
+                <fieldset>
+                  <div class="column">
+                    <input type="radio" name="paper3" class="sr-only" id="A3" value="A">
+                    <label for="A3">
+                      <img src="img/SpAb_Assess/3/A.PNG" style="max-width: 100%" alt="A3">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper3" class="sr-only" id="B3" value="B">
+                    <label for="B3">
+                      <img src="img/SpAb_Assess/3/B.PNG" style="max-width: 100%" alt="B3">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper3" class="sr-only" id="C3" value="C">
+                    <label for="C3">
+                      <img src="img/SpAb_Assess/3/C.PNG" style="max-width: 100%" alt="C3">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper3" class="sr-only" id="D3" value="D">
+                    <label for="D3">
+                      <img src="img/SpAb_Assess/3/D.PNG" style="max-width: 100%" alt="D3">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper3" class="sr-only" id="E3" value="E">
+                    <label for="E3">
+                      <img src="img/SpAb_Assess/3/E.PNG" style="max-width: 100%" alt="E3">
+                    </label>
+                  </div>
+
+                </fieldset>
+              </div>
             </div>
-            <hr>
-            <br>
-            <p><button type="button" onclick="next()" id="NxtButton" class="w3-button w3-blue-gray w3-round-xlarge w3-margin-bottom">Next</button></p>
+            <h4>정답을 선택하고 Next 버튼을 누르세요!</h4>
+            <p>
+              <button id="btn3" class="w3-button w3-blue-gray w3-round-xlarge w3-margin-bottom">Next</button>
+            </p>
+
+            <script>
+              $(document).ready(function() {
+
+                var $button = $("#btn3").hide(),
+                  $cbs = $('input[name="paper3"]').click(function() {
+                    $button.toggle($cbs.is(":checked"));
+                  });
+
+              });
+            </script>
+          </div>
+
+          <div id="Q4" style="display: none;">
+            <h1>Question 4
+            </h1>
+
+            <div class="w3-container">
+              <input type="image" src="img/SpAb_Assess/4/q.PNG" width="45%" style="pointer-events: none; margin-top: 2em" />
+              <hr style="border: 2px solid black; width: 50%; margin: auto; margin-bottom: 2em; margin-top: 2em">
+              <div class="row" style="margin: auto">
+                <fieldset>
+                  <div class="column">
+                    <input type="radio" name="paper4" class="sr-only" id="A4" value="A">
+                    <label for="A4">
+                      <img src="img/SpAb_Assess/4/A.PNG" style="max-width: 100%" alt="A4">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper4" class="sr-only" id="B4" value="B">
+                    <label for="B4">
+                      <img src="img/SpAb_Assess/4/B.PNG" style="max-width: 100%" alt="B4">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper4" class="sr-only" id="C4" value="C">
+                    <label for="C4">
+                      <img src="img/SpAb_Assess/4/C.PNG" style="max-width: 100%" alt="C4">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper4" class="sr-only" id="D4" value="D">
+                    <label for="D4">
+                      <img src="img/SpAb_Assess/4/D.PNG" style="max-width: 100%" alt="D4">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper4" class="sr-only" id="E4" value="E">
+                    <label for="E4">
+                      <img src="img/SpAb_Assess/4/E.PNG" style="max-width: 100%" alt="E4">
+                    </label>
+                  </div>
+
+                </fieldset>
+              </div>
+            </div>
+            <h4>정답을 선택하고 Next 버튼을 누르세요!</h4>
+            <p>
+              <button id="btn4" class="w3-button w3-blue-gray w3-round-xlarge w3-margin-bottom">Next</button>
+            </p>
+
+            <script>
+              $(document).ready(function() {
+
+                var $button = $("#btn4").hide(),
+                  $cbs = $('input[name="paper4"]').click(function() {
+                    $button.toggle($cbs.is(":checked"));
+                  });
+
+              });
+            </script>
+          </div>
+
+          <div id="Q5" style="display: none;">
+            <h1>Question 5
+            </h1>
+
+            <div class="w3-container">
+              <input type="image" src="img/SpAb_Assess/5/q.PNG" width="45%" style="pointer-events: none; margin-top: 2em" />
+              <hr style="border: 2px solid black; width: 50%; margin: auto; margin-bottom: 2em; margin-top: 2em">
+              <div class="row" style="margin: auto">
+                <fieldset>
+                  <div class="column">
+                    <input type="radio" name="paper5" class="sr-only" id="A5" value="A">
+                    <label for="A5">
+                      <img src="img/SpAb_Assess/5/A.PNG" style="max-width: 100%" alt="A5">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper5" class="sr-only" id="B5" value="B">
+                    <label for="B5">
+                      <img src="img/SpAb_Assess/5/B.PNG" style="max-width: 100%" alt="B5">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper5" class="sr-only" id="C5" value="C">
+                    <label for="C5">
+                      <img src="img/SpAb_Assess/5/C.PNG" style="max-width: 100%" alt="C5">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper5" class="sr-only" id="D5" value="D">
+                    <label for="D5">
+                      <img src="img/SpAb_Assess/5/D.PNG" style="max-width: 100%" alt="D5">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper5" class="sr-only" id="E5" value="E">
+                    <label for="E5">
+                      <img src="img/SpAb_Assess/5/E.PNG" style="max-width: 100%" alt="E5">
+                    </label>
+                  </div>
+
+                </fieldset>
+              </div>
+            </div>
+            <h4>정답을 선택하고 Next 버튼을 누르세요!</h4>
+            <p>
+              <button id="btn5" class="w3-button w3-blue-gray w3-round-xlarge w3-margin-bottom">Next</button>
+            </p>
+
+            <script>
+              $(document).ready(function() {
+
+                var $button = $("#btn5").hide(),
+                  $cbs = $('input[name="paper5"]').click(function() {
+                    $button.toggle($cbs.is(":checked"));
+                  });
+
+              });
+            </script>
+          </div>
+
+          <div id="Q6" style="display: none;">
+            <h1>Question 6
+            </h1>
+
+            <div class="w3-container">
+              <input type="image" src="img/SpAb_Assess/6/q.PNG" width="55%" style="pointer-events: none; margin-top: 2em" />
+              <hr style="border: 2px solid black; width: 50%; margin: auto; margin-bottom: 2em; margin-top: 2em">
+              <div class="row" style="margin: auto">
+                <fieldset>
+                  <div class="column">
+                    <input type="radio" name="paper6" class="sr-only" id="A6" value="A">
+                    <label for="A6">
+                      <img src="img/SpAb_Assess/6/A.PNG" style="max-width: 100%" alt="A6">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper6" class="sr-only" id="B6" value="B">
+                    <label for="B6">
+                      <img src="img/SpAb_Assess/6/B.PNG" style="max-width: 100%" alt="B6">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper6" class="sr-only" id="C6" value="C">
+                    <label for="C6">
+                      <img src="img/SpAb_Assess/6/C.PNG" style="max-width: 100%" alt="C6">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper6" class="sr-only" id="D6" value="D">
+                    <label for="D6">
+                      <img src="img/SpAb_Assess/6/D.PNG" style="max-width: 100%" alt="D6">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper6" class="sr-only" id="E6" value="E">
+                    <label for="E6">
+                      <img src="img/SpAb_Assess/6/E.PNG" style="max-width: 100%" alt="E6">
+                    </label>
+                  </div>
+
+                </fieldset>
+              </div>
+            </div>
+            <h4>정답을 선택하고 Next 버튼을 누르세요!</h4>
+            <p>
+              <button id="btn6" class="w3-button w3-blue-gray w3-round-xlarge w3-margin-bottom">Next</button>
+            </p>
+
+            <script>
+              $(document).ready(function() {
+
+                var $button = $("#btn6").hide(),
+                  $cbs = $('input[name="paper6"]').click(function() {
+                    $button.toggle($cbs.is(":checked"));
+                  });
+
+              });
+            </script>
+          </div>
+
+          <div id="Q7" style="display: none;">
+            <h1>Question 7
+            </h1>
+
+            <div class="w3-container">
+              <input type="image" src="img/SpAb_Assess/7/q.PNG" width="45%" style="pointer-events: none; margin-top: 2em" />
+              <hr style="border: 2px solid black; width: 50%; margin: auto; margin-bottom: 2em; margin-top: 2em">
+              <div class="row" style="margin: auto">
+                <fieldset>
+                  <div class="column">
+                    <input type="radio" name="paper7" class="sr-only" id="A7" value="A">
+                    <label for="A7">
+                      <img src="img/SpAb_Assess/7/A.PNG" style="max-width: 100%" alt="A7">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper7" class="sr-only" id="B7" value="B">
+                    <label for="B7">
+                      <img src="img/SpAb_Assess/7/B.PNG" style="max-width: 100%" alt="B7">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper7" class="sr-only" id="C7" value="C">
+                    <label for="C7">
+                      <img src="img/SpAb_Assess/7/C.PNG" style="max-width: 100%" alt="C7">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper7" class="sr-only" id="D7" value="D">
+                    <label for="D7">
+                      <img src="img/SpAb_Assess/7/D.PNG" style="max-width: 100%" alt="D7">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper7" class="sr-only" id="E7" value="E">
+                    <label for="E7">
+                      <img src="img/SpAb_Assess/7/E.PNG" style="max-width: 100%" alt="E7">
+                    </label>
+                  </div>
+
+                </fieldset>
+              </div>
+            </div>
+            <h4>정답을 선택하고 Next 버튼을 누르세요!</h4>
+            <p>
+              <button id="btn7" class="w3-button w3-blue-gray w3-round-xlarge w3-margin-bottom">Next</button>
+            </p>
+
+            <script>
+              $(document).ready(function() {
+
+                var $button = $("#btn7").hide(),
+                  $cbs = $('input[name="paper7"]').click(function() {
+                    $button.toggle($cbs.is(":checked"));
+                  });
+
+              });
+            </script>
+          </div>
+
+          <div id="Q8" style="display: none;">
+            <h1>Question 8
+            </h1>
+
+            <div class="w3-container">
+              <input type="image" src="img/SpAb_Assess/8/q.PNG" width="55%" style="pointer-events: none; margin-top: 2em" />
+              <hr style="border: 2px solid black; width: 50%; margin: auto; margin-bottom: 2em; margin-top: 2em">
+              <div class="row" style="margin: auto">
+                <fieldset>
+                  <div class="column">
+                    <input type="radio" name="paper8" class="sr-only" id="A8" value="A">
+                    <label for="A8">
+                      <img src="img/SpAb_Assess/8/A.PNG" style="max-width: 100%" alt="A8">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper8" class="sr-only" id="B8" value="B">
+                    <label for="B8">
+                      <img src="img/SpAb_Assess/8/B.PNG" style="max-width: 100%" alt="B8">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper8" class="sr-only" id="C8" value="C">
+                    <label for="C8">
+                      <img src="img/SpAb_Assess/8/C.PNG" style="max-width: 100%" alt="C8">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper8" class="sr-only" id="D8" value="D">
+                    <label for="D8">
+                      <img src="img/SpAb_Assess/8/D.PNG" style="max-width: 100%" alt="D8">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper8" class="sr-only" id="E8" value="E">
+                    <label for="E8">
+                      <img src="img/SpAb_Assess/8/E.PNG" style="max-width: 100%" alt="E8">
+                    </label>
+                  </div>
+
+                </fieldset>
+              </div>
+            </div>
+            <h4>정답을 선택하고 Next 버튼을 누르세요!</h4>
+            <p>
+              <button id="btn8" class="w3-button w3-blue-gray w3-round-xlarge w3-margin-bottom">Next</button>
+            </p>
+
+            <script>
+              $(document).ready(function() {
+
+                var $button = $("#btn8").hide(),
+                  $cbs = $('input[name="paper8"]').click(function() {
+                    $button.toggle($cbs.is(":checked"));
+                  });
+
+              });
+            </script>
+          </div>
+
+          <div id="Q9" style="display: none;">
+            <h1>Question 9
+            </h1>
+
+            <div class="w3-container">
+              <input type="image" src="img/SpAb_Assess/9/q.PNG" width="45%" style="pointer-events: none; margin-top: 2em" />
+              <hr style="border: 2px solid black; width: 50%; margin: auto; margin-bottom: 2em; margin-top: 2em">
+              <div class="row" style="margin: auto">
+                <fieldset>
+                  <div class="column">
+                    <input type="radio" name="paper9" class="sr-only" id="A9" value="A">
+                    <label for="A9">
+                      <img src="img/SpAb_Assess/9/A.PNG" style="max-width: 100%" alt="A9">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper9" class="sr-only" id="B9" value="B">
+                    <label for="B9">
+                      <img src="img/SpAb_Assess/9/B.PNG" style="max-width: 100%" alt="B9">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper9" class="sr-only" id="C9" value="C">
+                    <label for="C9">
+                      <img src="img/SpAb_Assess/9/C.PNG" style="max-width: 100%" alt="C9">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper9" class="sr-only" id="D9" value="D">
+                    <label for="D9">
+                      <img src="img/SpAb_Assess/9/D.PNG" style="max-width: 100%" alt="D9">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper9" class="sr-only" id="E9" value="E">
+                    <label for="E9">
+                      <img src="img/SpAb_Assess/9/E.PNG" style="max-width: 100%" alt="E9">
+                    </label>
+                  </div>
+
+                </fieldset>
+              </div>
+            </div>
+            <h4>정답을 선택하고 Next 버튼을 누르세요!</h4>
+            <p>
+              <button id="btn9" class="w3-button w3-blue-gray w3-round-xlarge w3-margin-bottom">Next</button>
+            </p>
+
+            <script>
+              $(document).ready(function() {
+
+                var $button = $("#btn9").hide(),
+                  $cbs = $('input[name="paper9"]').click(function() {
+                    $button.toggle($cbs.is(":checked"));
+                  });
+
+              });
+            </script>
+          </div>
+
+          <div id="Q10" style="display: none;">
+            <h1>Question 10
+            </h1>
+
+            <div class="w3-container">
+              <input type="image" src="img/SpAb_Assess/10/q.PNG" width="45%" style="pointer-events: none; margin-top: 2em" />
+              <hr style="border: 2px solid black; width: 50%; margin: auto; margin-bottom: 2em; margin-top: 2em">
+              <div class="row" style="margin: auto">
+                <fieldset>
+                  <div class="column">
+                    <input type="radio" name="paper10" class="sr-only" id="A10" value="A">
+                    <label for="A10">
+                      <img src="img/SpAb_Assess/10/A.PNG" style="max-width: 100%" alt="A10">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper10" class="sr-only" id="B10" value="B">
+                    <label for="B10">
+                      <img src="img/SpAb_Assess/10/B.PNG" style="max-width: 100%" alt="B10">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper10" class="sr-only" id="C10" value="C">
+                    <label for="C10">
+                      <img src="img/SpAb_Assess/10/C.PNG" style="max-width: 100%" alt="C10">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper10" class="sr-only" id="D10" value="D">
+                    <label for="D10">
+                      <img src="img/SpAb_Assess/10/D.PNG" style="max-width: 100%" alt="D10">
+                    </label>
+                  </div>
+                  <div class="column">
+                    <input type="radio" name="paper10" class="sr-only" id="E10" value="E">
+                    <label for="E10">
+                      <img src="img/SpAb_Assess/10/E.PNG" style="max-width: 100%" alt="E10">
+                    </label>
+                  </div>
+
+                </fieldset>
+              </div>
+            </div>
+            <h4>정답을 선택하고 Next 버튼을 누르세요!</h4>
+            <p>
+              <button onclick="submitanswer(10, true, StartTime)" id="btn10" class="w3-button w3-blue-gray w3-round-xlarge w3-margin-bottom">Next
+              </button>
+            </p>
+
+            <script>
+              $(document).ready(function() {
+
+                var $button = $("#btn10").hide(),
+                  $cbs = $('input[name="paper10"]').click(function() {
+                    $button.toggle($cbs.is(":checked"));
+                  });
+
+              });
+            </script>
           </div>
         </div>
       </div>
@@ -243,7 +627,7 @@
 
   </div>
 </body>
-<script type="text/javascript" src="js/StimuliFunctions.js"></script>
 <script type="text/javascript" src="js/questions.js"></script>
+
 
 </html>
