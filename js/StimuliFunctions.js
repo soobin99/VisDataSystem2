@@ -255,11 +255,3 @@ function downloadCSV(VisParameters) {
   // Clean up the DOM by removing the anchor element if necessary
   document.body.removeChild(a);
 }
-
-// Example usage:
-// Suppose you have some data in your VisParameters object...
-// Fill in the VisParameters object with some example data here
-// ...
-
-// Call the downloadCSV function to trigger the download
-downloadCSV(VisParameters);
